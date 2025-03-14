@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <rect width="100%" height="100%" fill="white"/>
+  <rect x="20" y="40" width="60" height="40" rx="2" ry="2" fill="#4B0082"/>
+  <rect x="30" y="50" width="40" height="20" rx="1" ry="1" fill="white"/>
+  <path d="M35,20 L65,20 L70,40 L30,40 Z" fill="#4B0082"/>
+  <text x="50" y="65" font-family="Arial" font-size="12" text-anchor="middle" fill="#4B0082">RETAIL+</text>
+</svg> 

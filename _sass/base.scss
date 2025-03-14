@@ -7,19 +7,34 @@
   padding: 0;
 }
 
-// Basic HTML styles
+// Base styles - Enhanced for mobile responsiveness
 html {
-  font-size: $base-font-size;
+  font-size: 16px;
   scroll-behavior: smooth;
+  
+  // Slightly reduce base font size on smaller screens
+  @media (max-width: $breakpoint-sm) {
+    font-size: 15px;
+  }
 }
 
 body {
   font-family: $base-font-family;
-  line-height: 1.6;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: $base-font-weight;
   color: $text-color;
   background-color: $background-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  
+  // Prevent content shift on mobile
+  &.menu-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
   
   &.home {
     .site-header {
@@ -33,87 +48,249 @@ body {
       }
       
       .page-link.cta {
-        background-color: $cta-color;
+        background: linear-gradient(to bottom, lighten($cta-color, 5%) 0%, $cta-color 100%);
         
         &:hover {
-          background-color: $cta-hover;
+          background: linear-gradient(to bottom, lighten($cta-color, 8%) 0%, lighten($cta-color, 3%) 100%);
         }
       }
     }
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font-family;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: $spacing-unit / 2;
-  color: $primary-dark;
+// Improved focus styles for accessibility
+:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
 }
 
-h1 {
-  font-size: $h1-font-size;
+// Remove default button styling
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-h2 {
-  font-size: $h2-font-size;
-}
-
-h3 {
-  font-size: $h3-font-size;
-}
-
-h4 {
-  font-size: $h4-font-size;
-}
-
-p {
-  margin-bottom: $spacing-unit / 2;
-}
-
+// Links
 a {
-  color: $primary-color;
+  color: $link-color;
   text-decoration: none;
   transition: color $transition-fast;
   
   &:hover {
-    color: $primary-dark;
+    color: darken($link-color, 15%);
+  }
+  
+  // Improve tap targets on mobile
+  @media (max-width: $breakpoint-sm) {
+    display: inline-block; // Makes tappable area more predictable
+    padding: 2px 0; // Slightly increase tap area
   }
 }
 
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  margin-bottom: $spacing-unit / 2;
+  color: $heading-color;
+}
+
+h1 {
+  font-size: 2.5rem;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 2.2rem;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.8rem;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1.6rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1.4rem;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: $spacing-unit;
+  
+  // Add better readability on mobile
+  @media (max-width: $breakpoint-sm) {
+    line-height: 1.6;
+  }
+}
+
+// Lists with better mobile spacing
 ul, ol {
   margin-left: $spacing-unit;
-  margin-bottom: $spacing-unit / 2;
-}
-
-blockquote {
-  border-left: 4px solid $primary-light;
-  padding-left: $spacing-unit / 2;
-  font-style: italic;
-  margin-left: 0;
-  margin-right: 0;
   margin-bottom: $spacing-unit;
-  color: $light-text;
+  
+  @media (max-width: $breakpoint-sm) {
+    margin-left: $spacing-unit * 0.8;
+  }
+  
+  li {
+    margin-bottom: $spacing-unit / 3;
+    
+    // Increase spacing between list items on mobile for better tap targets
+    @media (max-width: $breakpoint-sm) {
+      margin-bottom: $spacing-unit / 2;
+      padding: 2px 0;
+    }
+  }
 }
 
-code {
-  font-family: monospace;
-  background-color: $background-alt;
-  padding: 2px 5px;
-  border-radius: $border-radius;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background-color: $border-color;
-  margin: $spacing-unit 0;
-}
-
+// Responsive images
 img {
   max-width: 100%;
   height: auto;
-  display: block;
+  vertical-align: middle;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $primary-color;
+  padding-left: $spacing-unit;
+  font-style: italic;
+  margin: $spacing-unit 0;
+  
+  @media (max-width: $breakpoint-sm) {
+    padding-left: $spacing-unit / 2;
+    margin: $spacing-unit / 2 0;
+  }
+}
+
+// Code formatting
+pre, code {
+  font-family: $monospace-font-family;
+  font-size: 0.9em;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: #f8f8f8;
+}
+
+code {
+  padding: 2px 5px;
+}
+
+pre {
+  padding: $spacing-unit / 2;
+  overflow-x: auto;
+  
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-unit / 3;
+    font-size: 0.85em;
+  }
+}
+
+// Horizontal rule
+hr {
+  border: 0;
+  border-top: 1px solid $border-color;
+  margin: $spacing-unit 0;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-unit;
+  
+  @media (max-width: $breakpoint-sm) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid $border-color;
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: 8px;
+    white-space: nowrap;
+  }
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  text-align: left;
+}
+
+// Buttons with better touch targets and 3D effects
+.btn {
+  display: inline-block;
+  background: linear-gradient(to bottom, lighten($primary-color, 5%) 0%, $primary-color 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: $border-radius;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid darken($primary-color, 10%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
+             inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all $transition-fast;
+  text-align: center;
+  transform: translateY(0);
+  
+  &:hover {
+    background: linear-gradient(to bottom, lighten($primary-color, 8%) 0%, lighten($primary-color, 3%) 100%);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 
+               inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid darken($primary-color, 10%);
+  }
+  
+  // Larger tap area on mobile
+  @media (max-width: $breakpoint-sm) {
+    padding: 12px 24px;
+    min-width: 120px; // Ensure buttons aren't too small to tap
+  }
 }
 
 // Utility classes
@@ -163,49 +340,78 @@ img {
   }
 }
 
+// Enhanced 3D buttons
 .button, .cta-button {
   display: inline-block;
   padding: 12px 25px;
   border-radius: $border-radius;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
   transition: all $transition-fast;
   border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
+             inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: $hover-shadow;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+               inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 }
 
 .cta-button {
-  background-color: $cta-color;
+  background: linear-gradient(to bottom, lighten($cta-color, 5%) 0%, $cta-color 100%);
   color: white;
+  border-bottom: 2px solid darken($cta-color, 10%);
   
   &:hover {
-    background-color: $cta-hover;
+    background: linear-gradient(to bottom, lighten($cta-color, 8%) 0%, lighten($cta-color, 3%) 100%);
     color: white;
+  }
+  
+  &:active {
+    border-bottom: 1px solid darken($cta-color, 10%);
   }
 }
 
 .button {
-  background-color: $primary-color;
+  background: linear-gradient(to bottom, lighten($primary-color, 5%) 0%, $primary-color 100%);
   color: white;
+  border-bottom: 2px solid darken($primary-color, 10%);
   
   &:hover {
-    background-color: $primary-dark;
+    background: linear-gradient(to bottom, lighten($primary-color, 8%) 0%, lighten($primary-color, 3%) 100%);
     color: white;
   }
   
+  &:active {
+    border-bottom: 1px solid darken($primary-color, 10%);
+  }
+  
   &.secondary {
-    background-color: transparent;
-    border: 2px solid $primary-color;
+    background: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+    border: 1px solid $border-color;
+    border-bottom: 2px solid darken($border-color, 10%);
     color: $primary-color;
+    text-shadow: none;
     
     &:hover {
-      background-color: $primary-color;
-      color: white;
+      background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+      color: $primary-dark;
+      border-color: darken($border-color, 5%);
+    }
+    
+    &:active {
+      background: linear-gradient(to bottom, #f8f8f8 0%, #fff 100%);
+      border-bottom: 1px solid darken($border-color, 10%);
     }
   }
 } 

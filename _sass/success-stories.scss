@@ -1,0 +1,142 @@
+// Success Stories Section Styles
+
+.success-stories {
+  padding: $spacing-unit * 3 0;
+  background-color: white;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: $spacing-unit * 2;
+    
+    h2 {
+      color: $primary-color;
+      font-size: 2.2rem;
+      margin-bottom: $spacing-unit / 2;
+    }
+    
+    p {
+      color: $light-text;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .stories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  
+  .story-card {
+    flex: 0 0 calc(50% - 30px);
+    margin: 0 15px 30px;
+    background-color: $background-alt;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    
+    @media (max-width: $breakpoint-md) {
+      flex: 0 0 calc(100% - 30px);
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $hover-shadow;
+    }
+    
+    .story-header {
+      display: flex;
+      align-items: center;
+      padding: $spacing-unit;
+      border-bottom: 1px solid $border-color;
+      
+      .client-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: white;
+        padding: 10px;
+        margin-right: $spacing-unit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      
+      .client-info {
+        h3 {
+          margin-bottom: 5px;
+        }
+        
+        .industry {
+          color: $light-text;
+          font-size: $small-font-size;
+        }
+      }
+    }
+    
+    .story-content {
+      padding: $spacing-unit;
+      
+      .testimonial {
+        font-style: italic;
+        position: relative;
+        margin-bottom: $spacing-unit;
+        
+        &:before {
+          content: '"';
+          font-size: 3rem;
+          color: rgba($primary-color, 0.2);
+          position: absolute;
+          top: -15px;
+          left: -10px;
+          line-height: 1;
+        }
+      }
+      
+      .results {
+        margin-top: $spacing-unit;
+        
+        .result-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          
+          i {
+            color: $cta-color;
+            margin-right: 10px;
+          }
+          
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+      
+      .read-case-study {
+        display: inline-block;
+        margin-top: $spacing-unit;
+        font-weight: 600;
+        color: $primary-color;
+        
+        &:after {
+          content: '→';
+          margin-left: 5px;
+          transition: transform $transition-fast;
+        }
+        
+        &:hover {
+          &:after {
+            transform: translateX(3px);
+          }
+        }
+      }
+    }
+  }
+} 

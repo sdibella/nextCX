@@ -11,10 +11,13 @@ $light-text: #666666;
 $border-color: #E0E0E0;
 $success-color: #28a745;
 $error-color: #dc3545;
+$link-color: $primary-color; // Link color for consistency
+$heading-color: $primary-dark; // Heading color
 
 // Typography
 $base-font-family: 'Roboto', sans-serif;
 $heading-font-family: 'Raleway', sans-serif;
+$monospace-font-family: monospace;
 $base-font-size: 16px;
 $small-font-size: 14px;
 $large-font-size: 18px;
@@ -22,6 +25,10 @@ $h1-font-size: 2.5rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.5rem;
 $h4-font-size: 1.25rem;
+$base-font-weight: 400;
+$heading-font-weight: 700;
+$base-line-height: 1.6;
+$heading-line-height: 1.2;
 
 // Layout
 $spacing-unit: 30px;
@@ -44,10 +51,13 @@ $transition-slow: 0.8s;
 // Shadows
 $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 $hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+$button-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 
 // Border Radius
 $border-radius: 4px;
 $border-radius-lg: 8px;
+$border-radius-sm: 2px;
 
 // Z-index
 $z-index-dropdown: 1000;
@@ -56,4 +66,11 @@ $z-index-fixed: 1030;
 $z-index-modal-backdrop: 1040;
 $z-index-modal: 1050;
 $z-index-popover: 1060;
-$z-index-tooltip: 1070; 
+$z-index-tooltip: 1070;
+$z-index-header: 1000;
+$z-index-menu: 1010;
+
+// Mobile specific
+$tap-target-size: 44px; // Minimum touch target size for mobile
+$mobile-header-height: 60px;
+$mobile-menu-width: 250px; 

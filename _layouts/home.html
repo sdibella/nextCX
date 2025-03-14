@@ -3,40 +3,37 @@ layout: default
 ---
 
 <div class="hero">
-  <div class="hero-content">
-    <h1>Transform Customer Experiences with AI-Powered Insights</h1>
-    <p>nextCX helps businesses make data-driven decisions that enhance satisfaction, loyalty, and ROI.</p>
-    <a href="#contact-form" class="cta-button">Get Started Today</a>
+  <div class="wrapper hero-wrapper">
+    <div class="hero-content">
+      <h1>Transform Customer Experiences with AI-Powered Insights</h1>
+      <p>nextCX helps businesses make data-driven decisions that enhance satisfaction, loyalty, and ROI.</p>
+    </div>
+    
+    <div class="hero-form">
+      <div class="contact-card">
+        <h2>Get Started Today</h2>
+        <p>Fill out the form below and we'll be in touch shortly.</p>
+        <form class="contact-form-compact" action="https://formspree.io/f/your-formspree-id" method="POST">
+          <div class="form-group">
+            <input type="text" id="hero-name" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="hero-email" name="email" placeholder="Your Email" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="hero-company" name="company" placeholder="Company Name" required>
+          </div>
+          
+          <button type="submit" class="submit-button">Let's Talk</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
-<section id="contact-form" class="contact-section">
-  <div class="section-header">
-    <h2>Ready to Elevate Your Customer Experience?</h2>
-    <p>Contact us to learn how nextCX can help your business understand and serve customers better.</p>
-  </div>
-  
-  <form class="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="company">Company</label>
-      <input type="text" id="company" name="company" required>
-    </div>
-    
-    <button type="submit" class="submit-button">Let's Talk</button>
-  </form>
-</section>
-
-<section class="services-preview">
+<section id="services" class="services-preview">
   <div class="section-header">
     <h2>Our Services</h2>
     <p>AI-powered solutions that drive measurable CX improvements</p>
@@ -76,6 +73,77 @@ layout: default
       <h3>Consumer Research</h3>
       <p>Deep insights into customer behaviors, preferences, and expectations.</p>
       <a href="/services/consumer-research" class="learn-more">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section id="success-stories" class="success-stories">
+  <div class="wrapper">
+    <div class="section-title">
+      <h2>Success Stories</h2>
+      <p>See how we've helped organizations transform their customer experience strategies and achieve measurable results</p>
+    </div>
+    
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="story-header">
+          <div class="client-logo">
+            <img src="{{ '/assets/images/logo-retail.svg' | relative_url }}" alt="RetailPlus Logo">
+          </div>
+          <div class="client-info">
+            <h3>RetailPlus</h3>
+            <span class="industry">E-commerce Retail</span>
+          </div>
+        </div>
+        <div class="story-content">
+          <p class="testimonial">Working with nextCX transformed our approach to customer feedback. Their AI-powered analysis helped us identify pain points we weren't even aware of and prioritize improvements that made a real difference.</p>
+          <div class="results">
+            <div class="result-item">
+              <i class="fas fa-arrow-up"></i>
+              <span>43% increase in customer satisfaction scores</span>
+            </div>
+            <div class="result-item">
+              <i class="fas fa-arrow-up"></i>
+              <span>28% improvement in repeat purchase rate</span>
+            </div>
+            <div class="result-item">
+              <i class="fas fa-arrow-down"></i>
+              <span>35% reduction in customer support tickets</span>
+            </div>
+          </div>
+          <a href="/case-studies/retailplus" class="read-case-study">Read full case study</a>
+        </div>
+      </div>
+      
+      <div class="story-card">
+        <div class="story-header">
+          <div class="client-logo">
+            <img src="{{ '/assets/images/logo-finance.svg' | relative_url }}" alt="FinSecure Logo">
+          </div>
+          <div class="client-info">
+            <h3>FinSecure</h3>
+            <span class="industry">Financial Services</span>
+          </div>
+        </div>
+        <div class="story-content">
+          <p class="testimonial">nextCX helped us implement an NPS program that not only tracked customer sentiment but provided actionable insights for every department. Their strategic approach has been a game-changer for our client relationships.</p>
+          <div class="results">
+            <div class="result-item">
+              <i class="fas fa-arrow-up"></i>
+              <span>21 point increase in Net Promoter Score</span>
+            </div>
+            <div class="result-item">
+              <i class="fas fa-arrow-up"></i>
+              <span>18% growth in client portfolio value</span>
+            </div>
+            <div class="result-item">
+              <i class="fas fa-arrow-up"></i>
+              <span>40% improvement in client retention</span>
+            </div>
+          </div>
+          <a href="/case-studies/finsecure" class="read-case-study">Read full case study</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
