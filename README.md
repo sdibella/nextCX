@@ -59,23 +59,22 @@ This site is configured for easy deployment on Netlify:
 
 ## Netlify Deployment
 
-This site is configured for deployment on Netlify with specific settings to avoid the `sass-embedded` installation error and handle bundler version issues.
+This site is configured for deployment on Netlify with specific settings to avoid the `sass-embedded` installation error and bundler version issues.
 
 ### Key Deployment Files
 
 - **netlify.toml**: Configuration file for Netlify build settings, redirects, and headers
-- **netlify-build.sh**: Custom build script to ensure proper dependency installation
+- **build.sh**: Simple build script that creates a custom Gemfile compatible with Netlify
 - **.ruby-version**: Specifies Ruby 3.1.2 for consistency between local and Netlify environments
 - **Gemfile**: Uses Jekyll 4.3.2 with jekyll-sass-converter 2.2 to avoid sass-embedded issues
 
 ### Troubleshooting Netlify Deployment
 
-If you encounter bundler version errors, the `netlify-build.sh` script will:
+The build process has been simplified to work better with Netlify:
 
-1. Detect available bundler versions on Netlify
-2. Use the appropriate version (2.3.7 or 2.6.5)
-3. Try a simplified Gemfile if necessary
-4. Execute Jekyll build with the correct environment settings
+1. A custom Gemfile is created specifically for the Netlify environment
+2. Only compatible gem versions are used (jekyll 4.3.2, jekyll-sass-converter 2.2)
+3. The build script avoids specific version commands that may not be available in Netlify
 
 This approach ensures compatibility with Netlify's build environment and avoids common errors with sass-embedded and bundler versions.
 
@@ -88,8 +87,8 @@ This approach ensures compatibility with Netlify's build environment and avoids 
 
 If you encounter any deployment issues:
 - Check the Netlify build logs for specific errors
-- Ensure the Ruby version in `.ruby-version` and `netlify.toml` match a version supported by Netlify
-- Consider updating the Jekyll and gem versions in the Gemfile if needed
+- Test locally with `./build.sh` to simulate the Netlify environment
+- If needed, simplify your Gemfile further by removing non-essential plugins
 
 ## Site Structure
 

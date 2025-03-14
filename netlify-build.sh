@@ -10,24 +10,17 @@ set -x
 echo "====== Environment Information ======"
 echo "Ruby version: $(ruby -v)"
 echo "Gem version: $(gem -v)"
-echo "Bundler versions available: $(gem list bundler)"
+echo "Bundler versions: $(gem list bundler)"
 echo "Current directory: $(pwd)"
 echo "Directory contents: $(ls -la)"
 echo "===================================="
 
-# Try to detect available bundler versions
-if gem list bundler | grep -q "2.3.7"; then
-  BUNDLER_VERSION="2.3.7"
-elif gem list bundler | grep -q "2.6.5"; then
-  BUNDLER_VERSION="2.6.5"
-else
-  # Try to install Bundler 2.3.7 if not available
-  echo "Installing bundler 2.3.7..."
-  gem install bundler -v '2.3.7'
-  BUNDLER_VERSION="2.3.7"
-fi
+# Try to install specific bundler versions
+echo "Installing bundler 2.3.7 if needed..."
+gem install bundler -v 2.3.7 || echo "Failed to install bundler 2.3.7, continuing with available version"
 
-echo "Using Bundler version: $BUNDLER_VERSION"
+# Set bundler to use local path
+export BUNDLE_PATH="vendor/bundle"
 
 # Create a simplified Gemfile if necessary
 if [ ! -f "Gemfile.simple" ]; then
@@ -44,28 +37,25 @@ gem "minima", "~> 2.5"
 EOF
 fi
 
-# Set bundler to use local path
-export BUNDLE_PATH="vendor/bundle"
-
 # Try to use the normal Gemfile first
 echo "Attempting to install dependencies from Gemfile..."
-if bundle _${BUNDLER_VERSION}_ install; then
+if bundle install; then
   echo "Successfully installed dependencies from Gemfile"
 else
   echo "Failed to install dependencies from Gemfile, trying simplified Gemfile..."
   mv Gemfile Gemfile.original
   mv Gemfile.simple Gemfile
-  bundle _${BUNDLER_VERSION}_ install
+  bundle install
   echo "Successfully installed dependencies from simplified Gemfile"
 fi
 
 # Clean any old builds
 echo "Cleaning previous build..."
-bundle _${BUNDLER_VERSION}_ exec jekyll clean
+bundle exec jekyll clean || echo "Jekyll clean failed, continuing anyway"
 
 # Build the site
 echo "Building site..."
-JEKYLL_ENV=production bundle _${BUNDLER_VERSION}_ exec jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 
 echo "Build completed successfully!"
 ls -la _site 

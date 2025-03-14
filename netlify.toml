@@ -1,11 +1,10 @@
 [build]
-  command = "./netlify-build.sh"
+  command = "./build.sh"
   publish = "_site"
 
 [build.environment]
   JEKYLL_ENV = "production"
   RUBY_VERSION = "3.1.2" # Using Ruby 3.1.2 which is installed on your system
-  BUNDLER_VERSION = "2.3.7" # Changed to match available version on Netlify
 
 # Redirect options
 [[redirects]]
