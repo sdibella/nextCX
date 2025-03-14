@@ -59,7 +59,7 @@ This site is configured for easy deployment on Netlify:
 
 ## Netlify Deployment
 
-This site is configured for deployment on Netlify with specific settings to avoid the `sass-embedded` installation error.
+This site is configured for deployment on Netlify with specific settings to avoid the `sass-embedded` installation error and handle bundler version issues.
 
 ### Key Deployment Files
 
@@ -67,6 +67,17 @@ This site is configured for deployment on Netlify with specific settings to avoi
 - **netlify-build.sh**: Custom build script to ensure proper dependency installation
 - **.ruby-version**: Specifies Ruby 3.1.2 for consistency between local and Netlify environments
 - **Gemfile**: Uses Jekyll 4.3.2 with jekyll-sass-converter 2.2 to avoid sass-embedded issues
+
+### Troubleshooting Netlify Deployment
+
+If you encounter bundler version errors, the `netlify-build.sh` script will:
+
+1. Detect available bundler versions on Netlify
+2. Use the appropriate version (2.3.7 or 2.6.5)
+3. Try a simplified Gemfile if necessary
+4. Execute Jekyll build with the correct environment settings
+
+This approach ensures compatibility with Netlify's build environment and avoids common errors with sass-embedded and bundler versions.
 
 ### Deployment Process
 
