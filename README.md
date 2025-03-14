@@ -57,6 +57,29 @@ This site is configured for easy deployment on Netlify:
    - Build command: `jekyll build`
    - Publish directory: `_site`
 
+## Netlify Deployment
+
+This site is configured for deployment on Netlify with specific settings to avoid the `sass-embedded` installation error.
+
+### Key Deployment Files
+
+- **netlify.toml**: Configuration file for Netlify build settings, redirects, and headers
+- **netlify-build.sh**: Custom build script to ensure proper dependency installation
+- **.ruby-version**: Specifies Ruby 3.1.2 for consistency between local and Netlify environments
+- **Gemfile**: Uses Jekyll 4.3.2 with jekyll-sass-converter 2.2 to avoid sass-embedded issues
+
+### Deployment Process
+
+1. Push your changes to your Git repository
+2. Netlify will automatically detect changes and trigger a build
+3. The custom build script will install dependencies and build the site
+4. The site will be deployed to your Netlify URL
+
+If you encounter any deployment issues:
+- Check the Netlify build logs for specific errors
+- Ensure the Ruby version in `.ruby-version` and `netlify.toml` match a version supported by Netlify
+- Consider updating the Jekyll and gem versions in the Gemfile if needed
+
 ## Site Structure
 
 - `_layouts/`: Contains the layout templates
