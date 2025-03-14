@@ -1,0 +1,145 @@
+// Header styles
+
+.site-header {
+  background-color: white;
+  border-bottom: 1px solid $border-color;
+  padding: 15px 0;
+  transition: background-color $transition-fast, border-color $transition-fast;
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .site-title {
+    font-family: $heading-font-family;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      
+      .highlight {
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  
+  .page-link {
+    margin-left: 20px;
+    font-weight: 500;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: $primary-color;
+      transition: width $transition-fast;
+    }
+    
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+    
+    &.cta {
+      background-color: $primary-color;
+      color: white;
+      padding: 8px 16px;
+      border-radius: $border-radius;
+      transition: background-color $transition-fast;
+      
+      &:hover {
+        background-color: $primary-dark;
+        
+        &:after {
+          width: 0;
+        }
+      }
+    }
+  }
+  
+  // Mobile menu
+  .nav-trigger {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    text-align: right;
+    
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+      
+      > svg path {
+        fill: $text-color;
+      }
+    }
+    
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+    
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+    
+    .page-link {
+      display: block;
+      padding: 15px;
+      margin: 0;
+      text-align: center;
+      
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+      }
+      
+      &:after {
+        display: none;
+      }
+      
+      &.cta {
+        border-radius: 0;
+      }
+    }
+  }
+} 

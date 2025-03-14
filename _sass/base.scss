@@ -1,0 +1,211 @@
+// Base styles for the entire site
+
+// Reset
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Basic HTML styles
+html {
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $base-font-family;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  &.home {
+    .site-header {
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+      
+      .site-title, .page-link {
+        color: white;
+      }
+      
+      .page-link.cta {
+        background-color: $cta-color;
+        
+        &:hover {
+          background-color: $cta-hover;
+        }
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-unit / 2;
+  color: $primary-dark;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+p {
+  margin-bottom: $spacing-unit / 2;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+ul, ol {
+  margin-left: $spacing-unit;
+  margin-bottom: $spacing-unit / 2;
+}
+
+blockquote {
+  border-left: 4px solid $primary-light;
+  padding-left: $spacing-unit / 2;
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: $spacing-unit;
+  color: $light-text;
+}
+
+code {
+  font-family: monospace;
+  background-color: $background-alt;
+  padding: 2px 5px;
+  border-radius: $border-radius;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $border-color;
+  margin: $spacing-unit 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Utility classes
+.highlight {
+  color: $primary-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+.section {
+  padding: $spacing-unit * 2 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-unit * 2;
+  
+  h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: $spacing-unit / 2;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      width: 50px;
+      height: 3px;
+      background-color: $primary-color;
+      transform: translateX(-50%);
+    }
+  }
+  
+  p {
+    color: $light-text;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.button, .cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: $border-radius;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-fast;
+  border: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $hover-shadow;
+  }
+}
+
+.cta-button {
+  background-color: $cta-color;
+  color: white;
+  
+  &:hover {
+    background-color: $cta-hover;
+    color: white;
+  }
+}
+
+.button {
+  background-color: $primary-color;
+  color: white;
+  
+  &:hover {
+    background-color: $primary-dark;
+    color: white;
+  }
+  
+  &.secondary {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+} 

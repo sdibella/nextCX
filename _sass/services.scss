@@ -1,0 +1,229 @@
+// Services styles
+
+// Services index
+.services-index {
+  padding: $spacing-unit * 2 0;
+  
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 2;
+  }
+  
+  .service-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+    }
+    
+    .service-image {
+      flex: 0 0 40%;
+      background-color: $primary-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $spacing-unit;
+      
+      @media (max-width: $breakpoint-sm) {
+        padding: $spacing-unit * 2;
+      }
+      
+      i {
+        font-size: 5rem;
+        color: $primary-color;
+      }
+    }
+    
+    .service-content {
+      flex: 0 0 60%;
+      padding: $spacing-unit * 1.5;
+      
+      h2 {
+        margin-bottom: $spacing-unit / 2;
+      }
+      
+      p {
+        color: $light-text;
+        margin-bottom: $spacing-unit;
+      }
+      
+      .learn-more {
+        font-weight: 600;
+        position: relative;
+        
+        &:after {
+          content: '→';
+          margin-left: 5px;
+          transition: transform $transition-fast;
+        }
+        
+        &:hover {
+          &:after {
+            transform: translateX(3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Individual service
+.service {
+  padding: $spacing-unit * 2 0;
+  
+  .service-header {
+    margin-bottom: $spacing-unit * 2;
+    text-align: center;
+    
+    .service-title {
+      margin-bottom: $spacing-unit / 2;
+    }
+    
+    .service-description {
+      max-width: 800px;
+      margin: 0 auto;
+      color: $light-text;
+    }
+  }
+  
+  .service-content {
+    margin-bottom: $spacing-unit * 2;
+  }
+  
+  .benefits-section {
+    margin-top: $spacing-unit * 2;
+    padding-top: $spacing-unit * 2;
+    border-top: 1px solid $border-color;
+    
+    h2 {
+      text-align: center;
+      margin-bottom: $spacing-unit;
+    }
+    
+    .benefits-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+      
+      .benefit-item {
+        flex: 0 0 calc(33.333333% - 30px);
+        margin: 0 15px 30px;
+        background-color: $background-alt;
+        padding: $spacing-unit;
+        border-radius: $border-radius;
+        border-left: 4px solid $primary-color;
+        
+        @media (max-width: $breakpoint-md) {
+          flex: 0 0 calc(50% - 30px);
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+          flex: 0 0 calc(100% - 30px);
+        }
+        
+        h3 {
+          margin-bottom: $spacing-unit / 2;
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 10px;
+            color: $primary-color;
+          }
+        }
+        
+        p {
+          margin-bottom: 0;
+          color: $light-text;
+        }
+      }
+    }
+  }
+  
+  .cta-section {
+    margin-top: $spacing-unit * 2;
+    padding: $spacing-unit * 2;
+    background-color: $primary-light;
+    border-radius: $border-radius;
+    text-align: center;
+    
+    h2 {
+      margin-bottom: $spacing-unit / 2;
+    }
+    
+    p {
+      max-width: 700px;
+      margin: 0 auto $spacing-unit;
+    }
+    
+    .cta-button {
+      font-size: $large-font-size;
+      padding: 15px 35px;
+    }
+  }
+}
+
+// Guides (Coming Soon)
+.guides-coming-soon {
+  padding: $spacing-unit * 3 0;
+  text-align: center;
+  
+  h1 {
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0 auto $spacing-unit * 2;
+    color: $light-text;
+    font-size: $large-font-size;
+  }
+  
+  .coming-soon-illustration {
+    max-width: 500px;
+    margin: 0 auto $spacing-unit * 2;
+  }
+  
+  .notify-form {
+    max-width: 500px;
+    margin: 0 auto;
+    
+    .form-group {
+      display: flex;
+      
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid $border-color;
+        border-radius: $border-radius 0 0 $border-radius;
+        font-size: $base-font-size;
+        
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+      
+      button {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 0 $border-radius $border-radius 0;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color $transition-fast;
+        
+        &:hover {
+          background-color: $primary-dark;
+        }
+      }
+    }
+  }
+} 

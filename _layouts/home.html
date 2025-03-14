@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Transform Customer Experiences with AI-Powered Insights</h1>
+    <p>nextCX helps businesses make data-driven decisions that enhance satisfaction, loyalty, and ROI.</p>
+    <a href="#contact-form" class="cta-button">Get Started Today</a>
+  </div>
+</div>
+
+<section id="contact-form" class="contact-section">
+  <div class="section-header">
+    <h2>Ready to Elevate Your Customer Experience?</h2>
+    <p>Contact us to learn how nextCX can help your business understand and serve customers better.</p>
+  </div>
+  
+  <form class="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company" required>
+    </div>
+    
+    <button type="submit" class="submit-button">Let's Talk</button>
+  </form>
+</section>
+
+<section class="services-preview">
+  <div class="section-header">
+    <h2>Our Services</h2>
+    <p>AI-powered solutions that drive measurable CX improvements</p>
+  </div>
+  
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>NPS & CSAT Programs</h3>
+      <p>Track customer satisfaction and loyalty with advanced metrics and insights.</p>
+      <a href="/services/nps-csat-programs" class="learn-more">Learn More</a>
+    </div>
+    
+    <div class="service-card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Marketing & Lead Generation</h3>
+      <p>Create personalized customer journeys that convert and retain.</p>
+      <a href="/services/marketing-lead-generation" class="learn-more">Learn More</a>
+    </div>
+    
+    <div class="service-card">
+      <i class="fas fa-star"></i>
+      <h3>Reputation Management</h3>
+      <p>Monitor, analyze, and improve how customers perceive your brand.</p>
+      <a href="/services/reputation-management" class="learn-more">Learn More</a>
+    </div>
+    
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3>Support Chatbots</h3>
+      <p>AI-powered conversational solutions that enhance customer support.</p>
+      <a href="/services/support-chatbots" class="learn-more">Learn More</a>
+    </div>
+    
+    <div class="service-card">
+      <i class="fas fa-search"></i>
+      <h3>Consumer Research</h3>
+      <p>Deep insights into customer behaviors, preferences, and expectations.</p>
+      <a href="/services/consumer-research" class="learn-more">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="blog-preview">
+  <div class="section-header">
+    <h2>Latest Insights</h2>
+    <p>Thought leadership and guides on improving customer experience</p>
+  </div>
+  
+  <div class="blog-grid">
+    {%- for post in site.posts limit:3 -%}
+    <div class="blog-card">
+      <div class="blog-card-content">
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+  
+  <div class="view-all-container">
+    <a href="/blog" class="view-all">View All Posts</a>
+  </div>
+</section>
+
+{{ content }} 
