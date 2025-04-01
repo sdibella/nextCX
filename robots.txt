@@ -1,6 +1,8 @@
-# Allow all crawlers
+---
+layout: null
+permalink: /robots.txt
+---
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://www.nextcx.com/sitemap.xml 
+Sitemap: {{ site.url }}/sitemap.xml

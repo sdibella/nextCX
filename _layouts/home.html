@@ -2,267 +2,173 @@
 layout: default
 ---
 
-<div class="hero">
-  <div class="wrapper hero-wrapper">
-    <div class="hero-content">
-      <h1>Integrated Experience Management for Business Growth</h1>
-      <p>nextXM helps organizations design, implement, and optimize exceptional experiences across customers, employees, products, and brand.</p>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-subtitle">{{ page.hero_subtitle }}</div>
+            <h1 class="hero-title">{{ page.hero_title }}</h1>
+            <p class="hero-text">{{ page.hero_text }}</p>
+            <div class="hero-cta">
+                <button class="cta-button schedule-btn">{{ page.hero_cta_button }}</button>
+                <a href="#expertise" class="secondary-link">
+                    <span>{{ page.hero_cta_link }}</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
-    
-    <div class="hero-form">
-      <div class="contact-card">
-        <h2>Get Started Today</h2>
-        <p>Fill out the form below and we'll be in touch shortly.</p>
-        <form class="contact-form-compact" action="https://formspree.io/f/your-formspree-id" method="POST">
-          <div class="form-group">
-            <input type="text" id="hero-name" name="name" placeholder="Your Name" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="email" id="hero-email" name="email" placeholder="Your Email" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" id="hero-company" name="company" placeholder="Company Name" required>
-          </div>
-          
-          <button type="submit" class="submit-button">Let's Talk</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section id="services" class="services-preview">
-  <div class="section-header">
-    <h2>Our XM Solutions</h2>
-    <p>Comprehensive experience management solutions across all key touchpoints</p>
-  </div>
-  
-  <div class="services-grid">
-    <div class="service-card">
-      <i class="fas fa-users"></i>
-      <h3>Customer Experience</h3>
-      <p>NPS & CSAT programs, consumer research, and support chatbots to enhance customer satisfaction and loyalty.</p>
-      <a href="/services/customer-experience" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="service-card">
-      <i class="fas fa-heart"></i>
-      <h3>Employee Experience</h3>
-      <p>eNPS programs, engagement surveys, and recognition systems to improve workforce satisfaction and retention.</p>
-      <a href="/services/employee-experience" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="service-card">
-      <i class="fas fa-box-open"></i>
-      <h3>Product Experience</h3>
-      <p>User experience design, product feedback programs, and accessibility consulting for better product adoption.</p>
-      <a href="/services/product-experience" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="service-card">
-      <i class="fas fa-bullseye"></i>
-      <h3>Brand Experience</h3>
-      <p>Brand strategy, perception studies, and crisis management to enhance your market position and reputation.</p>
-      <a href="/services/brand-experience" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="service-card">
-      <i class="fas fa-chart-pie"></i>
-      <h3>XM Strategy & Data</h3>
-      <p>Integrated XM strategy development and experience data management for data-driven decisions.</p>
-      <a href="/services/xm-strategy-data" class="learn-more">Learn More</a>
-    </div>
-    
-    <div class="service-card">
-      <i class="fas fa-graduation-cap"></i>
-      <h3>Training & Workshops</h3>
-      <p>XM training for leaders and experience design workshops to build internal capabilities.</p>
-      <a href="/services/training-workshops" class="learn-more">Learn More</a>
-    </div>
-  </div>
+    <a href="#expertise" class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+        <div class="scroll-text">Scroll down</div>
+    </a>
 </section>
 
-<section class="xm-features">
-  <div class="wrapper">
-    <div class="section-title">
-      <h2>Why Integrated Experience Management?</h2>
-      <p>Organizations that manage experiences holistically outperform their peers in growth, profitability, and innovation</p>
+<!-- Expertise Section -->
+<section class="about" id="expertise">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">{{ page.expertise_subtitle }}</div>
+            <h2 class="section-title">{{ page.expertise_title }}</h2>
+            <p class="section-description">{{ page.expertise_description }}</p>
+        </div>
+        <div class="expertise-grid">
+            {% for service in page.services %}
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon">
+                    <i class="{{ service.icon }}"></i>
+                </div>
+                <h3 class="expertise-title">{{ service.title }}</h3>
+                <p class="expertise-text">{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    
-    <div class="features-grid">
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h3>AI-Driven Insights</h3>
-        <p>Leverage the latest AI technology to uncover patterns and predict experience outcomes before they impact your business.</p>
-      </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-tachometer-alt"></i>
-        </div>
-        <h3>Measurable Results</h3>
-        <p>Track experience KPIs with our comprehensive metrics framework and quantify the business impact of experience improvements.</p>
-      </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-rocket"></i>
-        </div>
-        <h3>Accelerated Growth</h3>
-        <p>Companies with superior integrated experiences achieve 3x faster growth and 2x higher customer and employee retention.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<section id="success-stories" class="success-stories">
-  <div class="wrapper">
-    <div class="section-title">
-      <h2>Success Stories</h2>
-      <p>See how we've helped organizations transform their experience strategies and achieve measurable results</p>
+<!-- Process Section -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">{{ page.process_subtitle }}</div>
+            <h2 class="section-title">{{ page.process_title }}</h2>
+            <p class="section-description">{{ page.process_description }}</p>
+        </div>
+        <div class="process-grid">
+            {% for step in page.process_steps %}
+            <div class="process-item fade-in">
+                <div class="process-number">{{ forloop.index }}</div>
+                <h3 class="process-title">{{ step.title }}</h3>
+                <p class="process-text">{{ step.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    
-    <div class="stories-grid">
-      <div class="story-card">
-        <div class="story-header">
-          <div class="client-logo">
-            <img src="{{ '/assets/images/logo-retail.svg' | relative_url }}" alt="RetailPlus Logo">
-          </div>
-          <div class="client-info">
-            <h3>RetailPlus</h3>
-            <span class="industry">E-commerce Retail</span>
-          </div>
-        </div>
-        <div class="story-content">
-          <p class="testimonial">Working with nextXM transformed our approach to customer and employee experience. Their integrated XM strategy helped us identify how employee satisfaction was directly impacting customer interactions.</p>
-          <div class="results">
-            <div class="result-item">
-              <i class="fas fa-arrow-up"></i>
-              <span>43% increase in customer satisfaction scores</span>
-            </div>
-            <div class="result-item">
-              <i class="fas fa-arrow-up"></i>
-              <span>32% improvement in employee engagement</span>
-            </div>
-            <div class="result-item">
-              <i class="fas fa-arrow-down"></i>
-              <span>35% reduction in customer support tickets</span>
-            </div>
-          </div>
-          <a href="/case-studies/retailplus" class="read-case-study">Read full case study</a>
-        </div>
-      </div>
-      
-      <div class="story-card">
-        <div class="story-header">
-          <div class="client-logo">
-            <img src="{{ '/assets/images/logo-finance.svg' | relative_url }}" alt="FinSecure Logo">
-          </div>
-          <div class="client-info">
-            <h3>FinSecure</h3>
-            <span class="industry">Financial Services</span>
-          </div>
-        </div>
-        <div class="story-content">
-          <p class="testimonial">nextXM helped us implement a comprehensive XM program that connected our brand perception, product usability, and customer service into a unified strategy, creating a consistent experience across all touchpoints.</p>
-          <div class="results">
-            <div class="result-item">
-              <i class="fas fa-arrow-up"></i>
-              <span>21 point increase in Net Promoter Score</span>
-            </div>
-            <div class="result-item">
-              <i class="fas fa-arrow-up"></i>
-              <span>28% improvement in product adoption rates</span>
-            </div>
-            <div class="result-item">
-              <i class="fas fa-arrow-up"></i>
-              <span>40% improvement in client retention</span>
-            </div>
-          </div>
-          <a href="/case-studies/finsecure" class="read-case-study">Read full case study</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<section class="methodology">
-  <div class="wrapper">
-    <div class="section-title">
-      <h2>Our Methodology</h2>
-      <p>A proven approach to designing and implementing integrated experience management programs</p>
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">{{ page.testimonials_subtitle }}</div>
+            <h2 class="section-title">{{ page.testimonials_title }}</h2>
+            <p class="section-description">{{ page.testimonials_description }}</p>
+        </div>
+        
+        <div class="testimonial-carousel fade-in">
+            <div class="testimonial-track" id="testimonial-track">
+                {% for testimonial in page.testimonials %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-container">
+                        <div class="testimonial-text">
+                            "{{ testimonial.quote }}"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                {% if testimonial.image %}
+                                <img src="{{ testimonial.image | relative_url }}" alt="{{ testimonial.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="author-info">
+                                <h4>{{ testimonial.name }}</h4>
+                                <p>{{ testimonial.position }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <div class="carousel-arrow" id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    {% for testimonial in page.testimonials %}
+                    <div class="carousel-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+                    {% endfor %}
+                </div>
+                <div class="carousel-arrow" id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="methodology-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Assess</h3>
-          <p>Comprehensive evaluation of your current customer, employee, product, and brand experiences to identify gaps and opportunities.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Design</h3>
-          <p>Strategic planning to create integrated experience programs that align with your business objectives and organizational culture.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Implement</h3>
-          <p>Systematic rollout of XM initiatives with proper tools, training, and change management to ensure adoption.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>Measure</h3>
-          <p>Continuous monitoring of experience metrics and KPIs to track progress and quantify business impact.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">5</div>
-        <div class="step-content">
-          <h3>Optimize</h3>
-          <p>Data-driven refinement of experience strategies based on feedback and performance analytics.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<section class="blog-preview">
-  <div class="section-header">
-    <h2>Latest Insights</h2>
-    <p>Thought leadership and guides on experience management best practices</p>
-  </div>
-  
-  <div class="blog-grid">
-    {%- for post in site.posts limit:3 -%}
-    <div class="blog-card">
-      <div class="blog-card-content">
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
-      </div>
+<!-- Blog Section -->
+<section class="blog" id="insights">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">{{ page.blog_subtitle }}</div>
+            <h2 class="section-title">{{ page.blog_title }}</h2>
+            <p class="section-description">{{ page.blog_description }}</p>
+        </div>
+        
+        <div class="blog-grid">
+            {% for post in page.blog_posts %}
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    <div class="blog-tag">{{ post.tag }}</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>{{ post.date }}</span>
+                    </div>
+                    <h3 class="blog-title">{{ post.title }}</h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">
+                        <span>Read Article</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="view-all-link">
+            <a href="{{ page.blog_link | relative_url }}" class="view-all-btn">
+                <span>View All Articles</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
-    {%- endfor -%}
-  </div>
-  
-  <div class="view-all-container">
-    <a href="/blog" class="view-all">View All Posts</a>
-  </div>
 </section>
 
-{{ content }} 
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">{{ page.contact_subtitle }}</div>
+            <h2 class="section-title">{{ page.contact_title }}</h2>
+            <p class="section-description">{{ page.contact_description }}</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-cta">{{ page.contact_cta }}</div>
+            <button class="cta-button schedule-btn">{{ page.contact_button }}</button>
+        </div>
+    </div>
+</section>

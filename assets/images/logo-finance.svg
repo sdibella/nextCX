@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <rect width="100%" height="100%" fill="white"/>
-  <circle cx="50" cy="50" r="35" fill="#4B0082"/>
-  <circle cx="50" cy="50" r="25" fill="white"/>
-  <path d="M50,30 L50,70 M40,40 L60,60 M40,60 L60,40" stroke="#4B0082" stroke-width="3"/>
-  <path d="M50,25 L53,32 L60,32 L55,38 L57,45 L50,40 L43,45 L45,38 L40,32 L47,32 Z" fill="#FF8C00"/>
-  <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#4B0082">FINSECURE</text>
-</svg> 

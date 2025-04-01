@@ -1,12 +1,5 @@
 ---
 ---
 
-@import "variables";
-@import "base";
-@import "layout";
-@import "header";
-@import "footer";
-@import "home";
-@import "services";
-@import "blog";
-@import "forms";
+/* Import the styles from _sass directory */
+@import "styles";

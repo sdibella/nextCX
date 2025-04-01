@@ -1,53 +1,8 @@
-# Jekyll build output
-_site/
-
-# Jekyll cache
-.sass-cache/
-.jekyll-cache/
+_site
+.sass-cache
+.jekyll-cache
 .jekyll-metadata
-
-# Bundler
-vendor/
-vendor/bundle/
-.bundle/
-
-# Ruby
-.ruby-version
-
-# OS generated files
+vendor
+.bundle
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Log files
-*.log
-
-# Temporary files
-*~
-tmp/
-
-# Node modules if using any JS tooling
-node_modules/
-
-# Local environment variables
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE specific files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-.cursor/
-
-# Keep Netlify files
-!netlify.toml
-!netlify-build.sh
-!build.sh
-!netlify.rb
+Gemfile.lock

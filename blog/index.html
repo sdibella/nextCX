@@ -1,0 +1,45 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="blog-index" style="padding: 120px 0 80px;">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">Insights</div>
+            <h1 class="section-title">Latest CX Thinking</h1>
+            <p class="section-description">Practical ideas and fresh perspectives on creating exceptional customer experiences that drive business growth.</p>
+        </div>
+        
+        <div class="blog-grid" style="margin-top: 60px;">
+            {% for post in site.posts %}
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="{{ post.featured_image | default: 'https://placehold.co/800x500' }}" alt="{{ post.title }}">
+                    {% if post.tag %}
+                    <div class="blog-tag">{{ post.tag }}</div>
+                    {% endif %}
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>{{ post.date | date: "%B %d, %Y" }}</span>
+                    </div>
+                    <h3 class="blog-title">{{ post.title }}</h3>
+                    <p class="blog-excerpt">
+                        {% if post.subtitle %}
+                            {{ post.subtitle }}
+                        {% else %}
+                            {{ post.content | strip_html | truncatewords: 30 }}
+                        {% endif %}
+                    </p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">
+                        <span>Read Article</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
