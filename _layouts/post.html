@@ -2,33 +2,33 @@
 layout: default
 ---
 
-<div class="blog-post-container" style="max-width: 800px; margin: 120px auto 80px; padding: 0 20px;">
-    <div class="blog-post-header" style="margin-bottom: 40px;">
-        <div class="blog-post-meta" style="margin-bottom: 10px; color: var(--gray); font-size: 0.9rem;">
+<div class="blog-post-container" style="max-width: 800px; margin: 120px auto 100px; padding: 0 20px;">
+    <div class="blog-post-header" style="margin-bottom: 60px;">
+        <div class="blog-post-meta" style="margin-bottom: 16px; color: var(--gray); font-size: 0.9rem;">
             <span><i class="far fa-calendar-alt" style="color: var(--secondary); margin-right: 5px;"></i> {{ page.date | date: "%B %d, %Y" }}</span>
             {% if page.tag %}
             <span style="margin-left: 15px; background-color: var(--secondary); color: white; padding: 3px 10px; border-radius: 30px; font-size: 0.8rem; text-transform: uppercase;">{{ page.tag }}</span>
             {% endif %}
         </div>
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">{{ page.title }}</h1>
+        <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.2;">{{ page.title }}</h1>
         {% if page.subtitle %}
-        <p style="font-size: 1.2rem; color: var(--gray); font-weight: 300;">{{ page.subtitle }}</p>
+        <p style="font-size: 1.3rem; color: var(--gray); font-weight: 300; line-height: 1.5;">{{ page.subtitle }}</p>
         {% endif %}
     </div>
     
     {% if page.featured_image %}
-    <div class="blog-post-featured-image" style="margin-bottom: 40px;">
-        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+    <div class="blog-post-featured-image" style="margin-bottom: 60px;">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
     </div>
     {% endif %}
     
-    <div class="blog-post-content" style="font-size: 1.1rem; line-height: 1.7;">
+    <div class="blog-post-content">
         {{ content }}
     </div>
     
-    <div class="blog-post-footer" style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--gray-light);">
-        <a href="{{ '/blog' | relative_url }}" style="display: inline-flex; align-items: center; color: var(--primary); text-decoration: none; font-weight: 500;">
-            <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to all articles
+    <div class="blog-post-footer" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--gray-light);">
+        <a href="{{ '/blog' | relative_url }}" style="display: inline-flex; align-items: center; color: var(--primary); text-decoration: none; font-weight: 500; font-size: 1.1rem;">
+            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i> Back to all articles
         </a>
     </div>
 </div>

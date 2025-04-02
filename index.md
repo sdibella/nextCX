@@ -62,7 +62,7 @@ testimonials:
 
 # Blog section
 blog_subtitle: Insights
-blog_title: Latest CX Thinking
+blog_title: CX Trends
 blog_description: Practical ideas and fresh perspectives on creating exceptional customer experiences that drive business growth.
 blog_link: /blog
 
@@ -73,19 +73,19 @@ blog_posts:
     date: March 24, 2025
     image: https://placehold.co/800x500
     tag: Technology
-    url: /blog/personalized-ai-chatbots
+    url: /blog/2025/03/24/personalized-ai-chatbots/
   - title: Beyond NPS Measuring What Actually Matters in Customer Experience
     excerpt: While Net Promoter Score (NPS) provides a useful snapshot of customer sentiment, relying on it exclusively misses important nuances in customer behavior. This article explores complementary metrics that reveal deeper insights about what truly drives customer satisfaction and retention.
     date: March 10, 2025
     image: https://placehold.co/800x500
     tag: Strategy
-    url: /blog/beyond-nps
+    url: /blog/2025/03/10/beyond-nps-measuring-what-matters/
   - title: Creating a Customer-Centric Culture That Actually Sticks
     excerpt: Many organizations struggle to maintain customer-focused initiatives beyond the initial excitement. This practical guide shares proven methods for embedding customer-centricity into company culture, with specific examples of organizations that have successfully transformed their approach.
     date: February 28, 2025
     image: https://placehold.co/800x500
     tag: Leadership
-    url: /blog/customer-centric-culture
+    url: /blog/2025/02/28/creating-customer-centric-culture/
 
 # Contact section
 contact_subtitle: Get Started

@@ -1,5 +1,5 @@
 /* Import the main variables and settings */
-@import "main";
+@use "main" as *;
 
 /* Base styles */
 * {
@@ -905,6 +905,73 @@ footer {
 .calendly-close:hover {
     background: #f1f5f9;
     transform: rotate(90deg);
+}
+
+/* Blog Post Content Styles */
+.blog-post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.blog-post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-post-content h2 {
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post-content h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.blog-post-content h4 {
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.blog-post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-content blockquote {
+    border-left: 4px solid var(--secondary);
+    padding-left: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: var(--gray);
+}
+
+.blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.blog-post-content a {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-light);
+    transition: all 0.3s ease;
+}
+
+.blog-post-content a:hover {
+    color: var(--secondary);
+    border-bottom-color: var(--secondary);
 }
 
 /* Animations */
